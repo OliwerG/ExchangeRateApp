@@ -1,2 +1,7 @@
-package pl.kurs.exchangerateapp.exceptions;public class InvalidInputDataException {
+package pl.kurs.exchangerateapp.exceptions;
+
+public class InvalidInputDataException extends Exception {
+    public InvalidInputDataException(String message) {
+        super(message);
+    }
 }

@@ -13,8 +13,6 @@
         <maven.compiler.target>14</maven.compiler.target>
     </properties>
 
-<!--    https://api.fastforex.io/fetch-all?from=USD&api_key=8b7e286a0a-bd5acbcbc0-rfiyxm-->
-
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
