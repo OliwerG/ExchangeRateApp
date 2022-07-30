@@ -1,10 +1,12 @@
 package pl.kurs.exchangerateapp.services;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.stubbing.OngoingStubbing;
 import pl.kurs.exchangerateapp.exceptions.InvalidInputDataException;
 
 import java.math.BigDecimal;
@@ -22,7 +24,9 @@ public class CurrencyServiceTest {
         Mockito.when(rateServiceMock.getExchangeRate(currencyFrom, currencyTo)).thenReturn(BigDecimal.valueOf(4.50));
 
         CurrencyService currencyService = new CurrencyService(rateServiceMock);
-        currencyService.exchange(currencyFrom, currencyTo, BigDecimal.valueOf(100));
+        BigDecimal exchange = currencyService.exchange(currencyFrom, currencyTo, BigDecimal.valueOf(100));
+
+        assertEquals(BigDecimal.valueOf(450.00), BigDecimal.valueOf(exchange.doubleValue()));
 
     }
 }
